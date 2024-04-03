@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/searchforcolleges</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">nan2</property>
+        
+        <!-- Current session context class -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        
+        <!-- Hibernate properties -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <!-- Specify only one hbm2ddl.auto property based on your requirement -->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        
+        <!-- Mapping configurations -->
+        <mapping class="com.searchforcolleges.entities.College"/>
+        <mapping class="com.searchforcolleges.entities.Department"/>
+        <mapping class="com.searchforcolleges.entities.Course"/>
+        <mapping class="com.searchforcolleges.entities.Lecturer"/>
+        <mapping class="com.searchforcolleges.entities.Student"/>
+    </session-factory>
+</hibernate-configuration>
